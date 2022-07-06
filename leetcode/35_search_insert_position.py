@@ -4,6 +4,7 @@ return the index if the target is found. If not, return the index where it would
 
 You must write an algorithm with O(log n) runtime complexity.
 https://leetcode.com/problems/search-insert-position/
+https://leetcode.com/problems/search-insert-position/discuss/2244599/Simple-Java-Solution-oror-100-Faster - check it
 
 
 slice:
