@@ -1,3 +1,8 @@
+"""
+explanation rus:
+https://www.youtube.com/watch?v=C6CbIReHsNk
+"""
+
 
 PARENTHESES = {
     "(": ")",
