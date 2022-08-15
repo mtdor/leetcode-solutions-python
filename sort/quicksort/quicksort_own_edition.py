@@ -65,12 +65,12 @@ if __name__ == '__main__':
     # data = [8, 7, 6, 1, 0, 9, 2]
     # data = [1, 7, 6, 8, 0, 9, 2]
     # data = [1, 0, 2, 8, 7, 9, 6]
-    # data = [1, 0, 2]
+    data = [1, 0, 2]
     # data = [8, 7, 9, 6]
     # data = [8, 7, 9, 6]
     # data = [0, 1, 2, 8, 7, 9, 6]
     # data = [0, 1, 2, 6, 7, 9, 8]  # test
-    data = [0, 1, 2, 6, 7, 8, 9]  # test
+    # data = [0, 1, 2, 6, 7, 8, 9]  # test
     print("Unsorted Array", data)
 
     size = len(data)

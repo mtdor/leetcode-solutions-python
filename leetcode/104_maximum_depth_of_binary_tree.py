@@ -23,7 +23,7 @@ https://www.youtube.com/watch?v=hTM3phVI6YQ
 from typing import Optional
 
 # Definition for a binary tree node.
-from leetcode.tools.tree_deserialize import tree_deserialize
+from leetcode.helpers.trees import deserialize
 
 
 class TreeNode:
@@ -41,6 +41,6 @@ class Solution:
 
 
 if __name__ == '__main__':
-    tree = tree_deserialize("[3,9,20,null,null,15,7]")
+    tree = deserialize("[3,9,20,null,null,15,7]")
     result = Solution().maxDepth(tree)
     assert result == 3, result
