@@ -5,13 +5,17 @@ https://leetcode.com/problems/merge-two-sorted-lists/discuss/1826693/Python3-MER
 
 from typing import Optional, List
 
-
 # Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next_el=None):
-        self.val = val
-        self.next_el = next_el
+from helpers.trees import is_identical
 
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+    def __repr__(self):
+        return f'{self.val}, {self.next}'
 
 # class Solution:
 #     def mergeTwoLists(self,
@@ -40,17 +44,35 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+        root_node = ListNode()
+        curr_node = root_node
+        while list1 or list2:
+            l1_val = list1.val if list1 else None
+            l2_val = list2.val if list2 else None
+
+            new_node = ListNode()
+            if list1 is None:
+                new_node.val = l2_val
+                list2 = list2.next
+            elif list2 is None:
+                new_node.val = l1_val
+                list1 = list1.next
+            elif l1_val < l2_val:
+                new_node.val = l1_val
+                list1 = list1.next
+            else:
+                new_node.val = l2_val
+                list2 = list2.next
+            curr_node.next = new_node
+            curr_node = new_node
+
+        return root_node.next
 
 
 if __name__ == '__main__':
-    l1n0 = ListNode(1)
-    l1n1 = ListNode(2)
-    l1n2 = ListNode(4)
+    l1 = ListNode(1, ListNode(2, ListNode(4)))
 
-    l2n0 = ListNode(1)
-    l2n1 = ListNode(3)
-    l2n2 = ListNode(4)
+    l2 = ListNode(1, ListNode(3, ListNode(4)))
 
-    result = Solution().mergeTwoLists(list1=l1n0, list2=l2n0)
-    assert result == [1, 1, 2, 3, 4, 4], result
+    result = Solution().mergeTwoLists(l1, l2)
+    print(result)
